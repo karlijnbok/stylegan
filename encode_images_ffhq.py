@@ -12,7 +12,7 @@ from encoder.perceptual_model import PerceptualModel
 import shutil
 
 # URL_CLBA = 'https://drive.google.com/uc?id=1MGqJl28pN4t7SAtSrPdSRJSQJqahkzUf' # karras2019stylegan-celebahq-1024x1024.pkl
-# URL_FFHQ = 'https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ'  # karras2019stylegan-ffhq-1024x1024.pkl
+URL_FFHQ = 'https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ'  # karras2019stylegan-ffhq-1024x1024.pkl
 
 def split_to_batches(l, n):
     for i in range(0, len(l), n):
@@ -58,10 +58,14 @@ def main():
     #         generator_network, discriminator_network, Gs_network = pickle.load(f)
 
     # FFHQ
-    with open('karras2019stylegan-ffhq-1024x1024.pkl', 'rb') as f:
+    with dnnlib.util.open_url(URL_FFHQ, cache_dir=config.cache_dir) as f:
         generator_network, discriminator_network, Gs_network = pickle.load(f)
+    # with open('karras2019stylegan-ffhq-1024x1024.pkl', 'rb') as f:
+    #     generator_network, discriminator_network, Gs_network = pickle.load(f)
 
     # CelebA
+    # with dnnlib.util.open_url(URL_CLBA, cache_dir=config.cache_dir) as f:
+    #     generator_network, discriminator_network, Gs_network = pickle.load(f)
     # with open('karras2019stylegan-celebahq-1024x1024.pkl', 'rb') as f:
     #     generator_network, discriminator_network, Gs_network = pickle.load(f)
 

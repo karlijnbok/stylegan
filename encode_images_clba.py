@@ -11,7 +11,7 @@ from encoder.generator_model import Generator
 from encoder.perceptual_model import PerceptualModel
 import shutil
 
-# URL_CLBA = 'https://drive.google.com/uc?id=1MGqJl28pN4t7SAtSrPdSRJSQJqahkzUf' # karras2019stylegan-celebahq-1024x1024.pkl
+URL_CLBA = 'https://drive.google.com/uc?id=1MGqJl28pN4t7SAtSrPdSRJSQJqahkzUf' # karras2019stylegan-celebahq-1024x1024.pkl
 # URL_FFHQ = 'https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ'  # karras2019stylegan-ffhq-1024x1024.pkl
 
 def split_to_batches(l, n):
@@ -57,8 +57,17 @@ def main():
     #     with dnnlib.util.open_url(URL_FFHQ_mirror, cache_dir=config.cache_dir) as f:
     #         generator_network, discriminator_network, Gs_network = pickle.load(f)
 
-    with open('karras2019stylegan-celebahq-1024x1024.pkl', 'rb') as f:
+    # FFHQ
+    # with dnnlib.util.open_url(URL_FFHQ, cache_dir=config.cache_dir) as f:
+    #     generator_network, discriminator_network, Gs_network = pickle.load(f)
+    # with open('karras2019stylegan-ffhq-1024x1024.pkl', 'rb') as f:
+    #     generator_network, discriminator_network, Gs_network = pickle.load(f)
+
+    # CelebA
+    with dnnlib.util.open_url(URL_CLBA, cache_dir=config.cache_dir) as f:
         generator_network, discriminator_network, Gs_network = pickle.load(f)
+    # with open('karras2019stylegan-celebahq-1024x1024.pkl', 'rb') as f:
+    #     generator_network, discriminator_network, Gs_network = pickle.load(f)
 
     generator = Generator(Gs_network, args.batch_size, randomize_noise=args.randomize_noise)
     perceptual_model = PerceptualModel(args.image_size, layer=9, batch_size=args.batch_size)
