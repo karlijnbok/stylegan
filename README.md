@@ -2,7 +2,7 @@
 Bachelor's Thesis in Artificial Intelligence \
 By Karlijn Bok
 
-Original code by Dmitry Nikitko (Puzer): https://github.com/Puzer/stylegan-encoder, who used the implementation of the original StyleGAN paper \
+Original code by Dmitry Nikitko (Puzer): https://github.com/Puzer/stylegan-encoder, who used the implementation of the original StyleGAN paper 
 > A Style-Based Generator Architecture for Generative Adversarial Networks
 Tero Karras (NVIDIA), Samuli Laine (NVIDIA), Timo Aila (NVIDIA)
 http://stylegan.xyz/paper
