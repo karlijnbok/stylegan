@@ -1,6 +1,6 @@
 # Exploring the Latent Space of StyleGAN
-Bachelor's Thesis in Artificial Intelligence \
-By Karlijn Bok
+Bachelor's Thesis in Artificial Intelligence by Karlijn Bok \
+Radboud University, Nijmegen
 
 Original code by Dmitry Nikitko (Puzer): https://github.com/Puzer/stylegan-encoder, who used the implementation of the original StyleGAN paper 
 > A Style-Based Generator Architecture for Generative Adversarial Networks
