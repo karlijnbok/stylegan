@@ -13,12 +13,5 @@ Two files were altered:
 * `align_images.py`
 * `encode_images.py` was turned into `encode_images_ffhq.py` and `encode_images_clba.py`
 
-Added folders/files:
-* `enc_ffhq`: contains all representations of the input image found in latent space of styleGAN trained on FFHQ
-* `enc_clba`: contains all representations of the input image found in latent space of styleGAN trained on CelebA-HQ
-* `gen_ffhq`: contains images corresponding to latent representations in `enc_ffhq`
-* `gen_clba`: contains images corresponding to latent representations in `enc_clba`
-
-
 Abstract: 
 > ...
